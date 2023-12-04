@@ -187,7 +187,7 @@
 <script>
   // this send user register data after they registered or logged in
   window.dataLayer = window.dataLayer || []; // data layer will be created if it's null or update if it's exist
-  window.dataLayer.push({
+  window.dataLayer.push({ // pass user data to data layer 
     'event': 'userData',
     'login_status': 'logged_in',
     'userId': '12345678abcdefgh'
