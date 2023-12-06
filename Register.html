@@ -168,6 +168,9 @@
         class="w-100 btn btn-lg btn-primary">Register</button>
 
     </form>
+    <p>already have account ?
+      <a href="Login.html" class="w-100 ">Login</a>
+    </p>
   </main>
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -204,18 +207,37 @@
   }
 
   function setLocalStorageUserID() {
-    let userId_locaclStorage = localStorage.setItem('userId', makeid(20));
+    let userId_locaclStorage = localStorage.setItem('userId', makeid(20)); // this  user register data after they registered or logged in
+    return userId_locaclStorage;
   }
 
-  userId_locaclStorage = localStorage.getItem('userId');
+  responsed_userId_locaclStorage = localStorage.getItem('userId');
 
-  // this send user register data after they registered or logged in
+  // function loginStatus(responsed_userId_locaclStorage) {
+  //   // let login_status = ''
+  //   // if (responsed_userId_locaclStorage == null) {
+  //   //   let login_status = 'not_logged_in'
+  //   // } if (responsed_userId_locaclStorage != setLocalStorageUserID.userId_locaclStorage) {
+  //   //   let login_status = 'wrong_person'
+  //   // } else {
+  //   //   let login_status = 'logged_in'
+  //   // }
+  //   var login_status = {
+  //     null: 'not_logged_in',
+  //     setLocalStorageUserID(responsed_userId_locaclStorage): "wrong_person",
+  //     responsed_userId_locaclStorage: 'logged_in'
+  //   };
+  //   return login_status
+
+  // }
+  // console.log('status = ', loginStatus(responsed_userId_locaclStorage))
+
 
   window.dataLayer = window.dataLayer || []; // data layer will be created if it's null or update if it's exist
   window.dataLayer.push({ // pass user data to data layer 
-    'event': 'userData',
-    'login_status': 'logged_in',
-    'userId': userId_locaclStorage
+    'event': 'registration',
+    'authentication_method': 'email',
+    'userId': responsed_userId_locaclStorage
   });
 </script>
 
