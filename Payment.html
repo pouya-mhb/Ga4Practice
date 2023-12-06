@@ -475,4 +475,15 @@
 
 </body>
 
+<script>
+  userId_locaclStorage = localStorage.getItem('userId');
+  console.log(userId_locaclStorage)
+
+  window.dataLayer.push({
+    'event': 'userData',
+    'login_status': 'logged_in',
+    'userId': userId_locaclStorage
+  })
+</script>
+
 </html>
