@@ -195,8 +195,7 @@
                             <li class="list-group-item d-flex justify-content-between bg-light">
                                 <div class="text-success">
                                     <h6 class="my-0">Promo code</h6>
-                                    <p id="promo-code-value"></p>
-                                    <small>EXAMPLECODE</small>
+                                    <small id="promo-code-value"></small>
                                 </div>
                                 <span class="text-success">−$5</span>
                             </li>
@@ -208,7 +207,7 @@
 
                         <form id="Redeem-form" class="card p-2">
                             <div class="input-group">
-                                <input id="promo-code" type="text" class="form-control" placeholder="Promo code">
+                                <input id="promo-code" type="text" class="form-control">
                                 <button id="Redeem-btn" class="btn btn-secondary">Redeem</button>
                             </div>
                         </form>
@@ -445,11 +444,18 @@
     }
 
     function setLocalStorageRedeemCode() {
-        let redeemCode_locaclStorage = localStorage.setItem('redeemCode', redeemCodeGenerator(4));
+        let redeemCode_locaclStorage = localStorage.setItem('redeemCode', redeemCodeGenerator(8));
         return redeemCode_locaclStorage;
     }
 
-    document.getElementById("promo-code-value").innerHTML = redeemCode_locaclStorage;
+    document.getElementById("promo-code-value").innerHTML = localStorage.getItem('redeemCode');
+    document.getElementById("promo-code").setAttribute('value', localStorage.getItem('redeemCode'));
+</script>
+
+<script>
+    function fillFormAuto() {
+
+    }
 </script>
 
 <script>
@@ -475,7 +481,7 @@
     if (localStorage.getItem('userId') == null) {
         alert('No User Found');
         setTimeout(2000);
-        window.location.pathname = '/Login.html'
+        window.location.pathname = '/Register.html'
     }
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
@@ -485,37 +491,39 @@
         'transactionId': localStorage.getItem('transactionId')
     });
 
+    const add_to_cart_items_value = [
+        {
+            name: 'item_id', value: 'Plan1234'
+        },
+        {
+            name: 'item_brand', value: 'Business Plan'
+        },
+        {
+            name: 'item_category', value: 'Pricing Plan'
+        },
+        {
+            name: 'item_list_id', value: 'ProductList1234'
+        },
+        {
+            name: 'item_list_name', value: 'Plans'
+        },
+        {
+            name: 'price', value: 29.99
+        },
+        {
+            name: 'quantity', value: 1
+        },
+        {
+            name: 'coupon', value: localStorage.getItem('redeemCode')
+        },
+    ]
+
     window.dataLayer.push({
         'event': 'add_to_cart',
         'currency': 'USD',
         'userId': localStorage.getItem('userId'),
         'transactionId': localStorage.getItem('transactionId'),
-        'items': [
-            {
-                name: 'item_id', value: 'Plan1234'
-            },
-            {
-                name: 'item_brand', value: 'Business Plan'
-            },
-            {
-                name: 'item_category', value: 'Pricing Plan'
-            },
-            {
-                name: 'item_list_id', value: 'ProductList1234'
-            },
-            {
-                name: 'item_list_name', value: 'Plans'
-            },
-            {
-                name: 'price', value: 29.99
-            },
-            {
-                name: 'quantity', value: 1
-            },
-            {
-                name: 'coupon', value: localStorage.getItem('redeemCode')
-            },
-        ]
+        'items': add_to_cart_items_value
     });
 
     const items_value = [
