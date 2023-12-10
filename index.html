@@ -1013,7 +1013,7 @@
               </ul>
 
               <div class="text-center mt-auto my-4">
-                <a id="add-to-cart" href="Payment.html" class="buy-btn">Add to cart</a>
+                <a id="add-to-cart" href="Checkout.html" class="buy-btn">Add to cart</a>
                 <a id="product-details" href="Product.html" class="buy-btn">Details</a>
               </div>
 
@@ -1658,11 +1658,12 @@
 <script>
   userId_locaclStorage = localStorage.getItem('userId');
 
+  window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'userData',
     'login_status': 'logged_in',
     'userId': userId_locaclStorage
-  })
+  });
 </script>
 
 </html>
