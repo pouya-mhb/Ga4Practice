@@ -189,22 +189,11 @@
 </body>
 
 <script>
-  document.getElementById("login-btn").addEventListener("click", setLocalStorageUserID);
+  document.getElementById("login-btn").addEventListener("click", getLocalStorageUserID);
 
-  function makeid(length) {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const charactersLength = characters.length;
-    let counter = 0;
-    while (counter < length) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-      counter += 1;
-    }
-    return result;
-  }
-
-  function setLocalStorageUserID() {
+  function getLocalStorageUserID() {
     let responsed_userId_locaclStorage = localStorage.getItem('userId');
+    console.log(responsed_userId_locaclStorage)
     return responsed_userId_locaclStorage;
   }
 
@@ -234,8 +223,9 @@
   window.dataLayer.push({ // pass user data to data layer 
     'event': 'login',
     'authentication_method': 'email',
-    'userId': responsed_userId_locaclStorage
+    'userId': getLocalStorageUserID,
   });
+
 </script>
 
 </html>
