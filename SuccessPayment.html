@@ -287,12 +287,15 @@
 </body>
 
 <script>
-  userId_locaclStorage = localStorage.getItem('userId');
+  let userId_locaclStorage = localStorage.getItem('userId');
 
+  window.dataLayer = window.dataLayer || []; // data layer will be created if it's null or update if it's exist
   window.dataLayer.push({
-    'event': 'userData',
+    'event': 'purchase',
     'login_status': 'logged_in',
-    'userId': userId_locaclStorage
+    'userId': userId_locaclStorage,
+    'transactionId': localStorage.getItem('transactionId'),
+    'purchase_status': 'successful_purchase'
   })
 </script>
 
