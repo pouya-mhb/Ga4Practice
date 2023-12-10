@@ -162,12 +162,13 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
+      <p>No account ?
+        <a href="Register.html" class="w-100 ">Register</a>
+      </p>
       <!-- <a href="index.html" class="w-100 btn btn-lg btn-primary" type="submit" onclick="makeid(20);">Register</a> -->
 
       <button id="login-btn" type="button" value="login" type="submit"
         class="w-100 btn btn-lg btn-primary">Login</button>
-
-    </form>
   </main>
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -187,7 +188,6 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-
 <script>
   document.getElementById("login-btn").addEventListener("click", getLocalStorageUserID);
 
@@ -200,9 +200,8 @@
   window.dataLayer.push({ // pass user data to data layer 
     'event': 'login',
     'authentication_method': 'email',
-    'userId': getLocalStorageUserID(),
+    'userId': localStorage.getItem('userId')
   });
-
 </script>
 
 </html>
