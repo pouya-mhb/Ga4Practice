@@ -502,7 +502,7 @@
             },
             {
                 name: 'item_list_id', value: 'ProductList1234'
-            }
+            },
             {
                 name: 'item_list_name', value: 'Plans'
             },
@@ -518,37 +518,39 @@
         ]
     });
 
+    const items_value = [
+        {
+            name: 'First name', value: 'John'
+        },
+        {
+            name: 'Last name', value: 'MHB'
+        },
+        {
+            name: 'Username', value: 'John_Mhb'
+        },
+        {
+            name: 'Email ', value: 'john.mhb@gmail.com'
+        },
+        {
+            name: 'Address', value: 'Tehran'
+        },
+        {
+            name: 'Country', value: 'Iran'
+        },
+        {
+            name: 'City', value: 'Tehran'
+        },
+        {
+            name: 'coupon', value: localStorage.getItem('redeemCode')
+        },
+    ]
+
     window.dataLayer.push({
         'event': 'add_shipping_info',
         'currency': 'USD',
         'userId': localStorage.getItem('userId'),
         'transactionId': localStorage.getItem('transactionId'),
-        'items': [
-            {
-                name: 'First name', value: 'John'
-            },
-            {
-                name: 'Last name', value: 'MHB'
-            },
-            {
-                name: 'Username', value: 'John_Mhb'
-            },
-            {
-                name: 'Email ', value: 'john.mhb@gmail.com'
-            }
-            {
-                name: 'Address', value: 'Tehran'
-            },
-            {
-                name: 'Country', value: 'Iran'
-            },
-            {
-                name: 'City', value: 'Tehran'
-            },
-            {
-                name: 'coupon', value: localStorage.getItem('redeemCode')
-            },
-        ]
+        'items': items_value
     });
 </script>
 
