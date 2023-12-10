@@ -222,4 +222,24 @@
 
 </script>
 
+<script>
+  document.getElementById("register-btn").addEventListener("click", fillRegisterFormAuto);
+
+  function generateEmail() {
+    var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+    var string = '';
+    for (var ii = 0; ii < 5; ii++) {
+      string += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return (string + '@domain.com');
+  };
+
+  function fillRegisterFormAuto() {
+    document.getElementById("floatingInput").setAttribute('value', generateEmail());
+    localStorage.setItem('email', generateEmail());
+    document.getElementById("floatingPassword").setAttribute('value', makeid(8));
+    localStorage.setItem('pass', makeid(8));
+  }
+</script>
+
 </html>

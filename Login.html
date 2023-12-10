@@ -204,4 +204,13 @@
   });
 </script>
 
+<script>
+  document.getElementById("login-btn").addEventListener("click", fillRegisterFormAuto);
+
+  function fillRegisterFormAuto() {
+    document.getElementById("floatingInput").setAttribute('value', localStorage.getItem('email'));
+    document.getElementById("floatingPassword").setAttribute('value', makeid(8));
+  }
+</script>
+
 </html>
