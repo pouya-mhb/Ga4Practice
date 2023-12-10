@@ -164,7 +164,7 @@
       </div>
       <!-- <a href="index.html" class="w-100 btn btn-lg btn-primary" type="submit" onclick="makeid(20);">Register</a> -->
 
-      <button id="register-btn" type="button" value="login" type="submit"
+      <button id="login-btn" type="button" value="login" type="submit"
         class="w-100 btn btn-lg btn-primary">Login</button>
 
     </form>
@@ -189,7 +189,7 @@
 </body>
 
 <script>
-  document.getElementById("register-btn").addEventListener("click", setLocalStorageUserID);
+  document.getElementById("login-btn").addEventListener("click", setLocalStorageUserID);
 
   function makeid(length) {
     let result = '';
@@ -204,11 +204,11 @@
   }
 
   function setLocalStorageUserID() {
-    let userId_locaclStorage = localStorage.setItem('userId', makeid(20)); // this  user register data after they registered or logged in
-    return userId_locaclStorage;
+    let responsed_userId_locaclStorage = localStorage.getItem('userId');
+    return responsed_userId_locaclStorage;
   }
 
-  responsed_userId_locaclStorage = localStorage.getItem('userId');
+
 
   // function loginStatus(responsed_userId_locaclStorage) {
   //   // let login_status = ''
