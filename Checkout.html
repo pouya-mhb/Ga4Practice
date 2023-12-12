@@ -217,7 +217,8 @@
                         <form id="Redeem-form" class="card p-2">
                             <div class="input-group">
                                 <input id="promo-code" type="text" class="form-control">
-                                <button id="Redeem-btn" class="btn btn-secondary">Redeem</button>
+                                <button id="Redeem-btn" class="btn btn-secondary"
+                                    onclick="setLocalStorageRedeemCode()">Redeem</button>
                             </div>
                         </form>
                         <hr>
@@ -441,7 +442,7 @@
 </body>
 
 <script>
-    document.getElementById("Redeem-btn").addEventListener("click", setLocalStorageRedeemCode());
+    // document.getElementById("Redeem-btn").addEventListener("click", setLocalStorageRedeemCode());
 
     function redeemCodeGenerator(length) {
         let result = '';
@@ -575,35 +576,39 @@
     var firstName = 'john'
     var lastName = 'jobs'
     var email = localStorage.getItem('email');
-    var userName = email;
     var address = "123 Yonge St, Toronto, ON M5C 1W4, Canada"
     var address2 = "Urban Eatery, 260 Yonge St Unit J-002, Toronto, ON M5B 2L9, Canada"
     var phoneNumber = "+1 416-597-9906"
     var country = "Canada"
     var state = "Ontorio"
     var zip = '5555'
+    var userName = localStorage.getItem('userId')
+
 
     function autoFillForm() {
-        var firstNameValue = document.getElementById("firstName").setAttribute('value', firstName);
-        var lastNameValue = document.getElementById("lastName").setAttribute('value', lastName);
-        var userNameValue = document.getElementById("username").setAttribute('value', userName);
-        var emailValue = document.getElementById("email").setAttribute('value', email);
-        var addressValue = document.getElementById("address").setAttribute('value', address);
-        var address2Value = document.getElementById("address2").setAttribute('value', address2);
+        var firstNameValue = firstName
+        document.getElementById("firstName").setAttribute('value', firstNameValue);
+        var lastNameValue = lastName
+        document.getElementById("lastName").setAttribute('value', lastName);
+        var userNameValue = userName
+        document.getElementById("username").setAttribute('value', userName);
+        var emailValue = email
+        document.getElementById("email").setAttribute('value', emailValue);
+        var addressValue = address
+        document.getElementById("address").setAttribute('value', addressValue);
+        var address2Value = address2
+        document.getElementById("address2").setAttribute('value', address2Value);
         document.getElementById("country").value = document.getElementById("option-1").value;
         document.getElementById("state").value = document.getElementById("option-1-1").value;
-        var zipValue = document.getElementById("zip").setAttribute('value', zip);
+        var zipValue = zip
+        document.getElementById("zip").setAttribute('value', zipValue);
         document.getElementById("same-address").checked = true;
         document.getElementById("save-info").checked = true;
 
         localStorage.setItem('firstName', firstNameValue);
-        localStorage.setItem('lastName', firstNameValue);
-        localStorage.setItem('username', firstNameValue);
-        localStorage.setItem('email', firstNameValue);
-        localStorage.setItem('address', firstNameValue);
-        localStorage.setItem('address2', firstNameValue);
-        localStorage.setItem('country', firstNameValue);
-        localStorage.setItem('state', firstNameValue);
+        localStorage.setItem('lastName', lastNameValue);
+        localStorage.setItem('address', addressValue);
+        localStorage.setItem('address2', address2Value);
         localStorage.setItem('zip', zipValue);
     }
 </script>
