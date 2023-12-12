@@ -573,34 +573,33 @@
 </script>
 
 <script>
-    var firstName = 'john'
-    var lastName = 'jobs'
-    var email = localStorage.getItem('email');
-    var address = "123 Yonge St, Toronto, ON M5C 1W4, Canada"
-    var address2 = "Urban Eatery, 260 Yonge St Unit J-002, Toronto, ON M5B 2L9, Canada"
-    var phoneNumber = "+1 416-597-9906"
-    var country = "Canada"
-    var state = "Ontorio"
-    var zip = '5555'
-    var userName = localStorage.getItem('userId')
-
-
     function autoFillForm() {
+        var firstName = 'john'
+        var lastName = 'jobs'
+        var address = "123 Yonge St, Toronto, ON M5C 1W4, Canada"
+        var address2 = "Urban Eatery, 260 Yonge St Unit J-002, Toronto, ON M5B 2L9, Canada"
+        var phoneNumber = "+1 416-597-9906"
+        var country = "Canada"
+        var state = "Ontorio"
+        var zip = '5555'
         var firstNameValue = firstName
-        document.getElementById("firstName").setAttribute('value', firstNameValue);
         var lastNameValue = lastName
-        document.getElementById("lastName").setAttribute('value', lastName);
         var userNameValue = userName
-        document.getElementById("username").setAttribute('value', userName);
-        var emailValue = email
-        document.getElementById("email").setAttribute('value', emailValue);
         var addressValue = address
-        document.getElementById("address").setAttribute('value', addressValue);
         var address2Value = address2
+        var zipValue = zip
+
+        var email = localStorage.getItem('email');
+        var userName = localStorage.getItem('userId');
+
+        document.getElementById("firstName").setAttribute('value', firstNameValue);
+        document.getElementById("lastName").setAttribute('value', lastName);
+        document.getElementById("username").setAttribute('value', userName);
+        document.getElementById("email").setAttribute('value', email);
+        document.getElementById("address").setAttribute('value', addressValue);
         document.getElementById("address2").setAttribute('value', address2Value);
         document.getElementById("country").value = document.getElementById("option-1").value;
         document.getElementById("state").value = document.getElementById("option-1-1").value;
-        var zipValue = zip
         document.getElementById("zip").setAttribute('value', zipValue);
         document.getElementById("same-address").checked = true;
         document.getElementById("save-info").checked = true;
