@@ -192,7 +192,7 @@
             <form class="card p-2">
               <div class="input-group">
                 <div class="input-group-text">Redeem Code</div>
-                <input id="redeemCode-2" type="text" class="form-control" value="">
+                <input id="redeemCode-2" type="text" class="form-control">
               </div>
             </form>
           </div>
@@ -382,7 +382,8 @@
     'event': 'userData',
     'login_status': 'logged_in',
     'userId': localStorage.getItem('userId'),
-    'transactionId': localStorage.getItem('transactionId')
+    'transactionId': localStorage.getItem('transactionId'),
+    'coupon': localStorage.getItem('transactionId')
   });
 
 </script>
