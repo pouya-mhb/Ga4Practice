@@ -493,83 +493,7 @@
         return transactionId_locaclStorage;
     }
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'userData',
-        'login_status': 'logged_in',
-        'userId': localStorage.getItem('userId'),
-        'transactionId': localStorage.getItem('transactionId')
-    });
 
-    const add_to_cart_items_value = [
-        {
-            name: 'item_id', value: 'Plan1234'
-        },
-        {
-            name: 'item_brand', value: 'Business Plan'
-        },
-        {
-            name: 'item_category', value: 'Pricing Plan'
-        },
-        {
-            name: 'item_list_id', value: 'ProductList1234'
-        },
-        {
-            name: 'item_list_name', value: 'Plans'
-        },
-        {
-            name: 'price', value: 29.99
-        },
-        {
-            name: 'quantity', value: 1
-        },
-        {
-            name: 'coupon', value: localStorage.getItem('redeemCode')
-        },
-    ]
-
-    window.dataLayer.push({
-        'event': 'add_to_cart',
-        'currency': 'USD',
-        'userId': localStorage.getItem('userId'),
-        'transactionId': localStorage.getItem('transactionId'),
-        'items': add_to_cart_items_value
-    });
-
-    const items_value = [
-        {
-            name: 'First name', value: 'John'
-        },
-        {
-            name: 'Last name', value: 'MHB'
-        },
-        {
-            name: 'Username', value: 'John_Mhb'
-        },
-        {
-            name: 'Email ', value: 'john.mhb@gmail.com'
-        },
-        {
-            name: 'Address', value: 'Tehran'
-        },
-        {
-            name: 'Country', value: 'Iran'
-        },
-        {
-            name: 'City', value: 'Tehran'
-        },
-        {
-            name: 'coupon', value: localStorage.getItem('redeemCode')
-        },
-    ]
-
-    window.dataLayer.push({
-        'event': 'add_shipping_info',
-        'currency': 'USD',
-        'userId': localStorage.getItem('userId'),
-        'transactionId': localStorage.getItem('transactionId'),
-        'items': items_value
-    });
 </script>
 
 <script>
@@ -609,6 +533,86 @@
         localStorage.setItem('address2', address2Value);
         localStorage.setItem('zip', zipValue);
     }
+</script>
+
+<script>
+    const add_to_cart_items_value = [
+        {
+            name: 'item_id', value: 'Plan1234'
+        },
+        {
+            name: 'item_brand', value: 'Business Plan'
+        },
+        {
+            name: 'item_category', value: 'Pricing Plan'
+        },
+        {
+            name: 'item_list_id', value: 'ProductList1234'
+        },
+        {
+            name: 'item_list_name', value: 'Plans'
+        },
+        {
+            name: 'price', value: 29.99
+        },
+        {
+            name: 'quantity', value: 1
+        },
+        {
+            name: 'coupon', value: localStorage.getItem('redeemCode')
+        },
+    ]
+
+    const items_value = [
+        {
+            name: 'First name', value: 'John'
+        },
+        {
+            name: 'Last name', value: 'MHB'
+        },
+        {
+            name: 'Username', value: 'John_Mhb'
+        },
+        {
+            name: 'Email ', value: 'john.mhb@gmail.com'
+        },
+        {
+            name: 'Address', value: 'Tehran'
+        },
+        {
+            name: 'Country', value: 'Iran'
+        },
+        {
+            name: 'City', value: 'Tehran'
+        },
+        {
+            name: 'coupon', value: localStorage.getItem('redeemCode')
+        },
+    ]
+
+    window.dataLayer = window.dataLayer || [];
+    // window.dataLayer.push({
+    //     'event': 'userData',
+    //     'login_status': 'logged_in',
+    //     'userId': localStorage.getItem('userId'),
+    //     'transactionId': localStorage.getItem('transactionId')
+    // });
+
+    window.dataLayer.push({
+        'event': 'add_to_cart',
+        'currency': 'USD',
+        'userId': localStorage.getItem('userId'),
+        'transactionId': localStorage.getItem('transactionId'),
+        'items': add_to_cart_items_value
+    });
+
+    window.dataLayer.push({
+        'event': 'add_shipping_info',
+        'currency': 'USD',
+        'userId': localStorage.getItem('userId'),
+        'transactionId': localStorage.getItem('transactionId'),
+        'items': items_value
+    });
 </script>
 
 </html>
