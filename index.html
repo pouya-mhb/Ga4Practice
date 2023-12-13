@@ -1664,13 +1664,11 @@
 </body>
 
 <script>
-  userId_locaclStorage = localStorage.getItem('userId');
-
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'userData',
     'login_status': 'logged_in',
-    'userId': userId_locaclStorage
+    'userId': localStorage.getItem('userId')
   });
 </script>
 
